@@ -1,13 +1,16 @@
 import Navbar from './component/layout/navbar';
-import Sidebar from './component/layout/sidebar';
-
+// import Sidebar from './component/layout/sidebar';
+import { Container, Row } from 'react-bootstrap';
 
 function App() {
   return (
-    <div>
+    <Container>
+    <Row>
+
       <Navbar />
-      <Sidebar />
-    </div>
+      {/* <Sidebar /> */}
+    </Row>
+    </Container>
   );
 }
 

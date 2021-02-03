@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import { Collapse } from "react-bootstrap";
 import { Dropdown, Accordion, Card, Button } from "react-bootstrap";
 
+
+
+
 function Navbar() {
   const [open, setOpen] = useState(false);
 
@@ -16,6 +19,10 @@ function Navbar() {
 
 
   //active에 대한 함수가 따로 필요(active는 오른쪽에 보여지는 페이지)
+
+  
+
+
 
   
 
@@ -33,7 +40,7 @@ function Navbar() {
           </span>
           <Collapse in={openBasicUiElement}>
             <ul>
-              <li>Buttons</li>
+              <li onClick={() => setComp(Buttons)}>Buttons</li>
               <li>Dropdowns</li>
             </ul>
           </Collapse>

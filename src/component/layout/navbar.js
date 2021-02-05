@@ -2,7 +2,7 @@ import "../../style/default.sass";
 import React, { useState } from "react";
 import { Collapse } from "react-bootstrap";
 import { Dropdown, Accordion, Card, Button } from "react-bootstrap";
-
+import { Link, Route, BrowserRouter as Router } from "react-router-dom";
 
 
 
@@ -21,7 +21,6 @@ function Navbar() {
   //active에 대한 함수가 따로 필요(active는 오른쪽에 보여지는 페이지)
 
   
-
 
 
   

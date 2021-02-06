@@ -1,6 +1,6 @@
 function Dashboard(){
     return(
-        <span>Dashboard</span>
+        <span>Dashboard comopnent!!!</span>
     );
 
 }

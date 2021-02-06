@@ -1,6 +1,6 @@
 function Buttons(){
     return(
-        <span>buttons</span>
+        <span>buttons component!!!</span>
     );
 
 }

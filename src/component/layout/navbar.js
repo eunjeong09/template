@@ -3,6 +3,13 @@ import React, { useState, useEffect } from "react";
 import { Collapse } from "react-bootstrap";
 import { Dropdown, Accordion, Card, Button } from "react-bootstrap";
 import { Link, Route, BrowserRouter as Router } from "react-router-dom";
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from 'recoil';
 
 
 function Navbar() {
@@ -19,20 +26,12 @@ function Navbar() {
   //active에 대한 함수가 따로 필요(active는 오른쪽에 보여지는 페이지)
   const [active, setActive] = useState('dashboard');
 
-  // useEffect(()=>{
-
-  // },[])
 
   //link가 클릭되면 path의 정보가 업데이트 되어서 App.js가 다시 호출되도록 - 테스트 필요
-  // const updateActive = () => {
-  //     // let toPath = this.attribute('to');
-  //     console.log('testtest');
-  //     setActive('test');
+  const updateActive = (props) => {
+    setActive('test');
   
-  // }
-
-  
-
+  }
 
 
   
@@ -144,33 +143,6 @@ function Navbar() {
           </Dropdown.Menu>
         </Dropdown>
 
-        <Button
-          onClick={() => setOpen(!open)}
-          aria-controls="example-collapse-text"
-          aria-expanded={open}
-        >
-          click
-        </Button>
-        <Collapse in={open}>
-          <div id="example-collapse-text">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-            terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
-            labore wes anderson cred nesciunt sapiente ea proident.
-          </div>
-        </Collapse>
-
-        {/* <Accordion defaultActiveKey="0">
-          <Card>
-            <Card.Header>
-            <Accordion.Toggle variant="link" eventKey="0">
-              Basic UI Elements
-            </Accordion.Toggle>
-            </Card.Header>
-            <Accordion.Collapse eventKey="0">
-              <Card.Body>Buttons</Card.Body>
-            </Accordion.Collapse>
-          </Card>
-        </Accordion> */}
       </nav>
     </Router>
   );

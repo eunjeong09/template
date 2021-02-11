@@ -12,7 +12,7 @@ import {
 } from 'recoil';
 
 
-function Navbar() {
+const Navbar = ({reloadPage}) => {
   const [open, setOpen] = useState(false);
 
   // 이 부분 해결법을 찾아야함
@@ -30,8 +30,11 @@ function Navbar() {
   //link가 클릭되면 path의 정보가 업데이트 되어서 App.js가 다시 호출되도록 - 테스트 필요
   const updateActive = (props) => {
     setActive('test');
+    reloadPage();
   
   }
+
+
 
 
   
@@ -53,7 +56,7 @@ function Navbar() {
             </span>
             <Collapse in={openBasicUiElement}>
               <ul>
-                <Link to="/buttons" >
+                <Link to="/buttons" onClick={updateActive}>
                   <li>Buttons</li>
                 </Link>
                 <li>Dropdowns</li>

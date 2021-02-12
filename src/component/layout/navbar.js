@@ -23,28 +23,13 @@ const Navbar = ({reloadPage}) => {
   const [openUserPage, setOpenUserPage] = useState(false);
   const [openErrorPage, setOpenErrorPage] = useState(false);
 
-  //active에 대한 함수가 따로 필요(active는 오른쪽에 보여지는 페이지)
-  const [active, setActive] = useState('dashboard');
-
-
-  //link가 클릭되면 path의 정보가 업데이트 되어서 App.js가 다시 호출되도록 - 테스트 필요
-  const updateActive = (props) => {
-    setActive('test');
-    reloadPage();
-  
-  }
-
-
-
-
-  
 
   return (
-    <Router>
+    // <Router>
       <nav>
         {/* <span class="test">sass test</span> */}
         <ul>
-          <Link to="/dashboard" onClick={updateActive}>
+          <Link to="/dashboard" >
             <li>Dashboard</li>
           </Link>
           <li>
@@ -56,7 +41,7 @@ const Navbar = ({reloadPage}) => {
             </span>
             <Collapse in={openBasicUiElement}>
               <ul>
-                <Link to="/buttons" onClick={updateActive}>
+                <Link to="/buttons" >
                   <li>Buttons</li>
                 </Link>
                 <li>Dropdowns</li>
@@ -147,7 +132,7 @@ const Navbar = ({reloadPage}) => {
         </Dropdown>
 
       </nav>
-    </Router>
+    // </Router>
   );
 }
 

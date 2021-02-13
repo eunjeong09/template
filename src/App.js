@@ -1,16 +1,19 @@
 import Navbar from "./component/layout/navbar";
-// import Sidebar from './component/layout/sidebar';
 import { Container, Row } from "react-bootstrap";
-import React, { useState, useCallback } from "react";
 import { Link, Route, BrowserRouter as Router } from "react-router-dom";
 
 // component
 import Dashboard from "./component/dashboard";
-//button
 import Buttons from "./component/buttons";
-
-import { atom, useRecoilState } from "recoil";
-
+import Dropdown from "./component/dropdown";
+import Element from "./component/element";
+import TableBasic from "./component/tableBasic";
+import Icon from "./component/icon";
+import Chartjs from "./component/chartjs";
+import Login from "./component/login";
+import Join from "./component/join";
+import Error400 from "./component/error400";
+import Error500 from "./component/error500";
 
 function App() {
 
@@ -21,6 +24,15 @@ function App() {
           <Navbar/>
           <Route exact path="/dashboard" component={Dashboard} />
           <Route path="/buttons" component={Buttons} />
+          <Route path="/dropdown" component={Dropdown} />
+          <Route path="/element" component={Element} />
+          <Route path="/tableBasic" component={TableBasic} />
+          <Route path="/icon" component={Icon} />
+          <Route path="/chartjs" component={Chartjs} />
+          <Route path="/login" component={Login} />
+          <Route path="/join" component={Join} />
+          <Route path="/error400" component={Error400} />
+          <Route path="/error500" component={Error500} />
         </Row>
       </Container>
     </Router>

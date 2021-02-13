@@ -3,14 +3,6 @@ import React, { useState, useEffect } from "react";
 import { Collapse } from "react-bootstrap";
 import { Dropdown, Accordion, Card, Button } from "react-bootstrap";
 import { Link, Route, BrowserRouter as Router } from "react-router-dom";
-import {
-  RecoilRoot,
-  atom,
-  selector,
-  useRecoilState,
-  useRecoilValue,
-} from 'recoil';
-
 
 const Navbar = ({reloadPage}) => {
   const [open, setOpen] = useState(false);
@@ -44,7 +36,9 @@ const Navbar = ({reloadPage}) => {
                 <Link to="/buttons" >
                   <li>Buttons</li>
                 </Link>
-                <li>Dropdowns</li>
+                <Link to="/dropdown" >
+                  <li>Dropdowns</li>
+                </Link>
               </ul>
             </Collapse>
           </li>
@@ -59,7 +53,9 @@ const Navbar = ({reloadPage}) => {
 
             <Collapse in={openFormElement}>
               <ul>
-                <li>Basic Elements</li>
+                <Link to="/element" >
+                  <li>Basic Elements</li>
+                </Link>
               </ul>
             </Collapse>
           </li>
@@ -72,11 +68,15 @@ const Navbar = ({reloadPage}) => {
             </span>
             <Collapse in={openTables}>
               <ul>
-                <li>Basic Tables</li>
+                <Link to="/tableBasic" >
+                  <li>Basic Tables</li>
+                </Link>
               </ul>
             </Collapse>
           </li>
-          <li>Icons</li>
+          <Link to="icon" >
+            <li>Icons</li>
+          </Link>
           <li>
             <span
               onClick={() => setOpenCharts(!openCharts)}
@@ -86,7 +86,9 @@ const Navbar = ({reloadPage}) => {
             </span>
             <Collapse in={openCharts}>
               <ul>
-                <li>ChartJS</li>
+                <Link to="chartjs" >
+                  <li>ChartJS</li>
+                </Link>
               </ul>
             </Collapse>
           </li>
@@ -99,8 +101,12 @@ const Navbar = ({reloadPage}) => {
             </span>
             <Collapse in={openUserPage}>
               <ul>
-                <li>400</li>
-                <li>500</li>
+                <Link to="login" >
+                  <li>login</li>
+                </Link>
+                <Link to="join" >
+                  <li>join</li>
+                </Link>
               </ul>
             </Collapse>
           </li>
@@ -113,8 +119,12 @@ const Navbar = ({reloadPage}) => {
             </span>
             <Collapse in={openErrorPage}>
               <ul>
-                <li>400</li>
-                <li>500</li>
+                <Link to="error400">
+                  <li>400</li>
+                </Link>
+                <Link to="error500">
+                  <li>500</li>
+                </Link>
               </ul>
             </Collapse>
           </li>

@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { RecoilRoot } from "recoil";
 import { Link, Route, BrowserRouter as Router } from "react-router-dom";
+import "./style/default.sass";
 
 {
   /* <React.StrictMode> */

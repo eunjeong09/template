@@ -1,9 +1,9 @@
-import { Button } from "react-bootstrap";
+import { Button, Container, Row, Col } from "react-bootstrap";
 
 function Buttons() {
   return (
     <div className="buttons component">
-        <h2>Buttons</h2>
+      <h2>Buttons</h2>
       <div className="bgWhite">
         <h3>Normal Buttons</h3>
         <p>
@@ -73,6 +73,50 @@ function Buttons() {
         <Button variant="outline-light">Light</Button>
         <Button variant="outline-dark">Dark</Button>
         <Button variant="outline-link">Link</Button>
+
+        <hr />
+
+        <Container>
+          <Row>
+            <Col>
+              <h3>Sizes</h3>
+              <p>
+                Fancy larger or smaller buttons? Add{" "}
+                <em className="red">size="lg", size="sm"</em> for additional
+                sizes.
+              </p>
+              <div className="mb-2">
+                <Button variant="primary" size="lg">
+                  Large button
+                </Button>
+                <Button variant="secondary" size="lg">
+                  Large button
+                </Button>
+              </div>
+              <div>
+                <Button variant="primary" size="sm">
+                  Small button
+                </Button>
+                <Button variant="secondary" size="sm">
+                  Small button
+                </Button>
+              </div>
+            </Col>
+            <Col>
+              <h3>Block Button</h3>
+              <p>
+                Create block level buttons—those that span the full width of a
+                parent—by adding <em className="red">block</em>
+              </p>
+              <Button variant="primary" size="lg" block>
+                Block level button
+              </Button>
+              <Button variant="secondary" size="lg" block>
+                Block level button
+              </Button>
+            </Col>
+          </Row>
+        </Container>
       </div>
     </div>
   );

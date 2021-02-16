@@ -5,7 +5,7 @@ import { Link, Route, BrowserRouter as Router } from "react-router-dom";
 // component
 import Dashboard from "./component/dashboard";
 import Buttons from "./component/buttons";
-import Dropdown from "./component/dropdown";
+import Dropdowns from "./component/dropdown";
 import Element from "./component/element";
 import TableBasic from "./component/tableBasic";
 import Icon from "./component/icon";
@@ -24,7 +24,7 @@ function App() {
           <Navbar/>
           <Route exact path="/dashboard" component={Dashboard} />
           <Route path="/buttons" component={Buttons} />
-          <Route path="/dropdown" component={Dropdown} />
+          <Route path="/dropdown" component={Dropdowns} />
           <Route path="/element" component={Element} />
           <Route path="/tableBasic" component={TableBasic} />
           <Route path="/icon" component={Icon} />

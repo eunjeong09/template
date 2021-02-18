@@ -1,4 +1,12 @@
-import { Button, Container, Row, Col } from "react-bootstrap";
+import {
+  Button,
+  ButtonGroup,
+  Container,
+  DropdownButton,
+  Dropdown,
+  Row,
+  Col,
+} from "react-bootstrap";
 
 function Buttons() {
   return (
@@ -76,47 +84,103 @@ function Buttons() {
 
         <hr />
 
-        <Container>
-          <Row>
-            <Col>
-              <h3>Sizes</h3>
-              <p>
-                Fancy larger or smaller buttons? Add{" "}
-                <em className="red">size="lg", size="sm"</em> for additional
-                sizes.
-              </p>
-              <div className="mb-2">
-                <Button variant="primary" size="lg">
-                  Large button
-                </Button>
-                <Button variant="secondary" size="lg">
-                  Large button
-                </Button>
-              </div>
-              <div>
-                <Button variant="primary" size="sm">
-                  Small button
-                </Button>
-                <Button variant="secondary" size="sm">
-                  Small button
-                </Button>
-              </div>
-            </Col>
-            <Col>
-              <h3>Block Button</h3>
-              <p>
-                Create block level buttons—those that span the full width of a
-                parent—by adding <em className="red">block</em>
-              </p>
-              <Button variant="primary" size="lg" block>
-                Block level button
+        {/* <Container> */}
+        <Row>
+          <Col>
+            <h3>Sizes</h3>
+            <p>
+              Fancy larger or smaller buttons? Add{" "}
+              <em className="red">size="lg", size="sm"</em> for additional
+              sizes.
+            </p>
+            <div className="mb-2">
+              <Button variant="primary" size="lg">
+                Large button
               </Button>
-              <Button variant="secondary" size="lg" block>
-                Block level button
+              <Button variant="secondary" size="lg">
+                Large button
               </Button>
-            </Col>
-          </Row>
-        </Container>
+            </div>
+            <div>
+              <Button variant="primary" size="sm">
+                Small button
+              </Button>
+              <Button variant="secondary" size="sm">
+                Small button
+              </Button>
+            </div>
+          </Col>
+          <Col>
+            <h3>Block Button</h3>
+            <p>
+              Create block level buttons—those that span the full width of a
+              parent—by adding <em className="red">block</em>
+            </p>
+            <Button variant="primary" size="lg" block>
+              Block level button
+            </Button>
+            <Button variant="secondary" size="lg" block>
+              Block level button
+            </Button>
+          </Col>
+        </Row>
+        {/* </Container> */}
+
+        <hr />
+
+        <Row>
+          <Col>
+            <h3>Button groups</h3>
+            <p>Wrap a series of &lt;Button&gt;s in a &lt;ButtonGroup&gt;.</p>
+            <ButtonGroup aria-label="Basic example">
+              <Button variant="secondary">Left</Button>
+              <Button variant="secondary">Middle</Button>
+              <Button variant="secondary">Right</Button>
+            </ButtonGroup>
+          </Col>
+          <Col>
+            <h3>Vertical variation</h3>
+            <p>
+              Make a set of buttons appear vertically stacked rather than
+              horizontally, by adding vertical to the &lt;ButtonGroup&gt;. Split
+              button dropdowns are not supported here.
+            </p>
+            <ButtonGroup vertical>
+              <Button>Button</Button>
+              <Button>Button</Button>
+
+              <DropdownButton
+                as={ButtonGroup}
+                title="Dropdown"
+                id="bg-vertical-dropdown-1"
+              >
+                <Dropdown.Item eventKey="1">Dropdown link</Dropdown.Item>
+                <Dropdown.Item eventKey="2">Dropdown link</Dropdown.Item>
+              </DropdownButton>
+
+              <Button>Button</Button>
+              <Button>Button</Button>
+
+              <DropdownButton
+                as={ButtonGroup}
+                title="Dropdown"
+                id="bg-vertical-dropdown-2"
+              >
+                <Dropdown.Item eventKey="1">Dropdown link</Dropdown.Item>
+                <Dropdown.Item eventKey="2">Dropdown link</Dropdown.Item>
+              </DropdownButton>
+
+              <DropdownButton
+                as={ButtonGroup}
+                title="Dropdown"
+                id="bg-vertical-dropdown-3"
+              >
+                <Dropdown.Item eventKey="1">Dropdown link</Dropdown.Item>
+                <Dropdown.Item eventKey="2">Dropdown link</Dropdown.Item>
+              </DropdownButton>
+            </ButtonGroup>
+          </Col>
+        </Row>
       </div>
     </div>
   );

@@ -22,7 +22,7 @@ function App() {
         <Row>
           <Navbar />
           <Col>
-            <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/" component={Dashboard} />
             <Route path="/buttons" component={Buttons} />
             <Route path="/dropdown" component={Dropdowns} />
             <Route path="/element" component={Element} />

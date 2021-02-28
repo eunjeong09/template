@@ -1,4 +1,5 @@
 import Navbar from "./component/layout/navbar";
+import Sidebar from "./component/layout/sidebar";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link, Route, BrowserRouter as Router } from "react-router-dom";
 
@@ -20,7 +21,8 @@ function App() {
     <Router>
       <Container>
         <Row>
-          <Navbar />
+          {/* <Navbar /> */}
+          <Sidebar />
           <Col>
             <Route exact path="/" component={Dashboard} />
             <Route path="/buttons" component={Buttons} />

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { OverlayTrigger, Popover, Container, Row, Col } from "react-bootstrap";
+import React, { useState, useEffect, useRef } from "react";
+import { Overlay, OverlayTrigger, Popover, Container, Row, Col } from "react-bootstrap";
 import { Link, Route } from "react-router-dom";
 
 //react-icons
@@ -14,31 +14,44 @@ import {
   FaDizzy,
 } from "react-icons/fa";
 
-
 function Sidebar() {
+  const [show, setShow] = useState(false);
+  const [target, setTarget] = useState(null);
+  const ref = useRef(null);
+
+  const handleClick = (event) => {
+    setShow(!show);
+    setTarget(event.target);
+  };
   return (
     <div className="sideBar">
-      Sidebar~~
       <ul>
         <li>
           <FaDesktop />
         </li>
         <li>
-          <OverlayTrigger
-            placement="right"
-            overlay={
-              <ul>
-                <Link to="/buttons">
-                  <li>Buttons</li>
-                </Link>
-                <Link to="/dropdown">
-                  <li>Dropdowns</li>
-                </Link>
-              </ul>
-            }
+          <FaClone />
+
+          <Overlay
+            show={show}
+            target={target}
+            placement="bottom"
+            container={ref.current}
+            containerPadding={20}
           >
-            <FaClone />
-          </OverlayTrigger>
+            <Popover id="popover-contained">
+              <Popover.Content>
+                <ul>
+                  <Link to="/buttons">
+                    <li>Buttons</li>
+                  </Link>
+                  <Link to="/dropdown">
+                    <li>Dropdowns</li>
+                  </Link>
+                </ul>
+              </Popover.Content>
+            </Popover>
+          </Overlay>
         </li>
         <li>
           <OverlayTrigger
@@ -119,11 +132,6 @@ function Sidebar() {
             <FaDizzy />
           </OverlayTrigger>
         </li>
-        {/* <li>
-          <OverlayTrigger placement="right" overlay={popover}>
-            <FaDizzy />
-          </OverlayTrigger>
-        </li> */}
       </ul>
     </div>
   );
